@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>פאב הרצל – Pub Herzel | גן יבנה</title>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Heebo:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0b0a;--bg2:#171311;--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.1);--tx:#f4efe8;--mut:#a89f94;--amber:#e8a33d;--wine:#5c1622;--vio:#3a2257;
+--serif:'Frank Ruhl Libre','David Libre',Georgia,serif;--sans:'Heebo',system-ui,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);line-height:1.7;padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:inherit;text-decoration:none}
+section{padding:96px 22px;max-width:1160px;margin:auto}
+h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin-bottom:10px}
+.sub{color:var(--mut);margin-bottom:38px;max-width:560px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:600 1rem var(--sans);cursor:pointer;backdrop-filter:blur(10px);transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn.pri{background:linear-gradient(135deg,#f0b550,#c97f1c);color:#1a1005;border:0;box-shadow:0 8px 30px rgba(232,163,61,.3)}
+.btn.pri:hover{box-shadow:0 10px 40px rgba(232,163,61,.5)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:env(safe-area-inset-top,0) 22px 0;transition:.3s}
+nav::before{content:'';position:absolute;inset:0;z-index:-1;background:rgba(13,11,10,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);opacity:0;transition:opacity .3s}
+nav.sc::before{opacity:1}
+.nv{max-width:1160px;margin:auto;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-weight:900;font-size:1.5rem;color:var(--amber);text-shadow:0 0 18px rgba(232,163,61,.5)}
+.links{display:flex;gap:26px;font-size:.95rem}
+.links a{color:var(--mut);transition:color .2s}.links a:hover{color:var(--amber)}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger i{display:block;height:2px;background:var(--tx);margin:6px 8px;transition:.3s}
+.burger.on i:nth-child(1){transform:translateY(8px) rotate(45deg)}.burger.on i:nth-child(2){opacity:0}.burger.on i:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;padding:110px 22px 70px;max-width:none}
+.bg{position:absolute;inset:0;background:
+radial-gradient(circle at 18% 28%,rgba(232,163,61,.35),transparent 18%),radial-gradient(circle at 80% 22%,rgba(150,60,90,.35),transparent 22%),
+radial-gradient(circle at 62% 70%,rgba(110,70,190,.28),transparent 25%),radial-gradient(circle at 35% 82%,rgba(232,163,61,.2),transparent 20%),
+linear-gradient(180deg,#120d0c,#0d0b0a);animation:drift 14s ease-in-out infinite alternate}
+.shelf{position:absolute;inset:0;opacity:.5}
+.ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,10,.55),rgba(13,11,10,.75) 60%,var(--bg))}
+@keyframes drift{to{transform:scale(1.08) translateY(-10px)}}
+.hc{position:relative;max-width:760px}
+.hc>*{opacity:0;transform:translateY(24px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hc>:nth-child(2){animation-delay:.15s}.hc>:nth-child(3){animation-delay:.3s}.hc>:nth-child(4){animation-delay:.45s}.hc>:nth-child(5){animation-delay:.6s}
+@keyframes up{to{opacity:1;transform:none}}
+.badge{display:inline-block;padding:7px 18px;border-radius:999px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(8px);margin-bottom:22px;font-size:.95rem}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(4rem,16vw,9.5rem);line-height:1;color:var(--tx);text-shadow:0 0 40px rgba(232,163,61,.45),0 0 90px rgba(232,163,61,.2)}
+.tag{font-family:var(--serif);font-size:clamp(1.4rem,4vw,2.2rem);color:var(--amber);margin:10px 0 16px}
+.hero p{color:#cfc6ba;max-width:520px;margin:0 auto 32px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* quick */
+.qg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.q{padding:30px 20px;border-radius:22px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(12px);text-align:center;transition:.3s}
+.q:hover{transform:translateY(-6px);border-color:rgba(232,163,61,.5);box-shadow:0 12px 40px rgba(232,163,61,.12)}
+.q b{display:block;font-size:2.4rem;margin-bottom:6px}.q span{font-weight:600}
+/* about */
+.ab{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.ab p{color:#cfc6ba;margin-bottom:18px}
+.info{background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:28px}
+.info div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.info div:last-child{border:0}.info span{color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chips em{font-style:normal;padding:6px 14px;border-radius:999px;border:1px solid var(--line);font-size:.9rem}
+.hrs{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.st{display:inline-block;margin-inline-start:8px;padding:2px 12px;border-radius:99px;font-size:.85rem;font-weight:600}
+.st.o{background:rgba(70,200,120,.15);color:#6fe3a0}.st.c{background:rgba(220,70,70,.15);color:#ff8a8a}
+/* menu */
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.tools input{flex:1;min-width:200px;padding:14px 20px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:1rem var(--sans)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:28px}
+.cats button{white-space:nowrap;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mut);font:600 .95rem var(--sans);cursor:pointer;transition:.2s}
+.cats button.on{background:var(--amber);color:#1a1005;border-color:var(--amber)}
+.mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.dish{border-radius:20px;overflow:hidden;background:var(--bg2);border:1px solid var(--line);transition:.3s;animation:up .5s both}
+.dish:hover{transform:translateY(-5px);border-color:rgba(232,163,61,.4)}
+.ph{aspect-ratio:4/3;display:grid;place-items:center;font-size:3rem;overflow:hidden;position:relative}
+.ph::after{content:"";position:absolute;inset:0;background:inherit;transition:transform .5s;z-index:0}
+.dish:hover .ph,.gi:hover .ph{filter:brightness(1.2)}
+.ph span{position:relative;z-index:1}
+.dc{padding:16px 18px}
+.dc h3{font-size:1.1rem;display:flex;justify-content:space-between;gap:8px}
+.dc h3 i{font-style:normal;color:var(--amber)}.dc p{color:var(--mut);font-size:.9rem}.dc small{color:var(--amber);font-size:.8rem}
+.empty{color:var(--mut);padding:30px 0}
+.note{color:var(--mut);font-size:.85rem;margin:18px 0 26px}
+/* reviews */
+.rv{display:grid;grid-template-columns:260px 1fr;gap:28px}
+.score{padding:34px;border-radius:24px;text-align:center;background:linear-gradient(160deg,rgba(232,163,61,.16),rgba(58,34,87,.3));border:1px solid var(--line)}
+.score b{font-family:var(--serif);font-size:4.5rem;line-height:1;display:block;color:var(--amber)}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.rc{padding:24px;border-radius:20px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(10px)}
+.rc .s{color:var(--amber);letter-spacing:2px}.rc p{color:#cfc6ba;margin:8px 0;font-size:.95rem}.rc small{color:var(--mut)}
+/* gallery */
+.gg{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px}
+.gi{border-radius:18px;overflow:hidden;cursor:pointer;position:relative;border:0;padding:0;color:var(--tx);font:inherit}
+.gi .ph{aspect-ratio:auto;height:100%;font-size:2.4rem;transition:transform .5s}.gi:hover .ph{transform:scale(1.08)}
+.gi.w{grid-column:span 2}.gi.t{grid-row:span 2}
+.gi small{position:absolute;bottom:10px;inset-inline:12px;z-index:2;text-align:start;font-weight:600;text-shadow:0 2px 8px #000}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.9);display:none;place-items:center;padding:20px}
+.lb.on{display:grid}.lb .ph{width:min(90vw,820px);aspect-ratio:16/10;border-radius:22px;font-size:6rem}
+.lb p{text-align:center;margin-top:14px}.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0));inset-inline-start:16px;font-size:2rem;background:none;border:0;color:#fff;cursor:pointer;width:48px;height:48px}
+/* events */
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.ev{border-radius:22px;overflow:hidden;background:var(--bg2);border:1px solid var(--line);transition:.3s}
+.ev:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(110,70,190,.2)}
+.ev .ph{aspect-ratio:16/9}.ev div.b{padding:20px}.ev h3{font-family:var(--serif);font-size:1.4rem}
+.ev .d{color:var(--amber);font-size:.9rem;margin:4px 0 8px}.ev p{color:var(--mut);font-size:.92rem;margin-bottom:14px}
+/* location */
+.lc{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:stretch}
+.map{border-radius:24px;border:1px solid var(--line);min-height:320px;position:relative;overflow:hidden;background:#15110f;display:grid;place-items:center;text-align:center;padding:20px}
+.map svg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.pin{position:relative;z-index:1}.pin b{font-size:3rem;display:block;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.lc address{font-style:normal;font-size:1.3rem;margin:14px 0 22px}
+/* contact */
+.ct{text-align:center;border-radius:32px;padding:70px 22px;background:radial-gradient(circle at 50% 0,rgba(232,163,61,.2),transparent 60%),linear-gradient(160deg,var(--wine),#1b0f1f);border:1px solid var(--line);max-width:1116px;margin:0 22px}
+.ctw{padding:30px 0 96px;max-width:1160px;margin:auto}
+.ct h2{font-size:clamp(2.4rem,7vw,4.5rem)}
+.ct .cta{margin-top:28px}
+footer{border-top:1px solid var(--line);padding:46px 22px calc(46px + env(safe-area-inset-bottom,0));text-align:center;color:var(--mut);background:#080706}
+footer .logo{display:block;margin-bottom:10px}.fl{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.fl a:hover{color:var(--amber)}
+.fab{display:none;position:fixed;inset-inline:16px;bottom:calc(14px + env(safe-area-inset-bottom,0));z-index:60;justify-content:center;padding:16px;font-size:1.1rem;box-shadow:0 10px 40px rgba(232,163,61,.5)}
+.toast{position:fixed;bottom:90px;left:50%;transform:translate(-50%,20px);background:#241d18;border:1px solid var(--amber);padding:12px 22px;border-radius:99px;opacity:0;pointer-events:none;transition:.3s;z-index:120;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.rv-in{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}.rv-in.in{opacity:1;transform:none}
+/* reservation + lightbox nav */
+.rsv{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:780px;margin:34px auto 0}
+.rsv input{padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--tx);font:1rem var(--sans);color-scheme:dark;min-width:0;width:100%}
+.rsv .btn{grid-column:1/-1;justify-content:center}.rsv small{grid-column:1/-1;color:#d9cfc3;opacity:.8}
+.lb .nb{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);font-size:1.8rem;inset-inline-start:auto}
+#lp{right:14px}#ln{left:14px}
+.links a.act{color:var(--amber)}
+/* mobile */
+@media(max-width:820px){
+section{padding:68px 18px}
+.burger{display:block}
+.links{position:fixed;inset:0;background:rgba(13,11,10,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:flex-start;gap:4px;font-size:1.5rem;font-family:var(--serif);opacity:0;pointer-events:none;transition:.3s;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:calc(84px + env(safe-area-inset-top,0px)) 20px calc(40px + env(safe-area-inset-bottom,0px))}
+.links a:first-child{margin-top:auto}.links a:last-child{margin-bottom:auto}
+.links.on{opacity:1;pointer-events:auto}.links a{padding:12px 24px;color:var(--tx);flex-shrink:0}
+.burger{position:relative;z-index:2}
+.qg{grid-template-columns:1fr 1fr;gap:12px}.q{padding:22px 12px}
+.ab,.rv,.lc{grid-template-columns:1fr}
+.gg{grid-template-columns:1fr 1fr;grid-auto-rows:140px}.gi.w{grid-column:span 2}
+.cta .btn{width:100%;justify-content:center;padding:16px}
+.fab{display:flex}footer{padding-bottom:90px}
+.ct{margin:0 18px;padding:48px 18px}
+.rsv{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hc>*,.rv-in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="nv">
+<a href="#home" class="logo">פאב הרצל</a>
+<button class="burger" id="bg" aria-label="תפריט"><i></i><i></i><i></i></button>
+<div class="links" id="lk">
+<a href="#home">בית</a><a href="#menu">התפריט</a><a href="#gallery">הגלריה</a><a href="#events">אירועים</a><a href="#reviews">ביקורות</a><a href="#about">אודות</a><a href="#contact">צור קשר</a>
+</div></div></nav>
+
+<header class="hero" id="home">
+<div class="bg"></div>
+<svg class="shelf" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<g fill="#000" opacity=".55"><rect x="60" y="80" width="26" height="90" rx="6"/><rect x="100" y="60" width="22" height="110" rx="6"/><rect x="140" y="90" width="30" height="80" rx="6"/><rect x="200" y="70" width="24" height="100" rx="6"/><rect x="560" y="85" width="28" height="85" rx="6"/><rect x="605" y="55" width="22" height="115" rx="6"/><rect x="645" y="75" width="30" height="95" rx="6"/><rect x="700" y="90" width="24" height="80" rx="6"/></g>
+<rect x="30" y="170" width="740" height="5" fill="#e8a33d" opacity=".5"/><rect x="30" y="172" width="740" height="30" fill="#e8a33d" opacity=".08"/>
+</svg>
+<div class="ov"></div>
+<div class="hc">
+<div class="badge">⭐ 4.6 · 302 ביקורות</div>
+<h1>פאב הרצל</h1>
+<div class="tag">הלילה מתחיל בהרצל</div>
+<p>פאב בגן יבנה עם אווירה טובה, אלכוהול איכותי, קוקטיילים, אוכל ומוזיקה.</p>
+<div class="cta">
+<a class="btn pri" href="#menu">הצגת התפריט</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A8%D7%A6%D7%9C+39+%D7%92%D7%9F+%D7%99%D7%91%D7%A0%D7%94" target="_blank" rel="noopener">נווט אלינו</a>
+<a class="btn" href="tel:+972524787505">📞 התקשר עכשיו · 052-478-7505</a>
+</div></div>
+</header>
+
+<section id="quick"><div class="qg">
+<div class="q rv-in"><b>🍸</b><span>קוקטיילים מעולים</span></div>
+<div class="q rv-in"><b>🍺</b><span>בירה איכותית</span></div>
+<div class="q rv-in"><b>🌙</b><span>אווירת לילה</span></div>
+<div class="q rv-in"><b>🌿</b><span>ישיבה בחוץ</span></div>
+</div></section>
+
+<section id="about"><div class="ab">
+<div class="rv-in"><h2>הבר השכונתי של גן יבנה</h2>
+<p>פאב הרצל נמצא ברחוב הרצל 39. כאן מוזגים קוקטיילים ובירה, מגישים אוכל ויושבים בחוץ כשנעים.</p>
+<p>בערבים יש מוזיקה והופעות באווירה קהילתית. אפשר להזמין מקום מראש בטלפון.</p>
+<div class="chips"><em>ישיבה בחוץ</em><em>קוקטיילים</em><em>אלכוהול</em><em>אוכל</em><em>הזמנה מראש</em><em>מוזיקה ואירועים</em></div></div>
+<div class="info rv-in">
+<div><span>כתובת</span><b>הרצל 39, גן יבנה</b></div>
+<div><span>טלפון</span><a href="tel:+972524787505"><b>052-478-7505</b></a></div>
+<div><span>מחיר</span><b>₪50–100 לאדם</b></div>
+<div><span>דירוג</span><b>4.6 / 5 (302 ביקורות)</b></div>
+<div class="hrs" style="display:block"><span>שעות פעילות</span>
+<p style="margin-top:6px"><b>יום שני:</b> 20:30–00:00 <span id="st" class="st" hidden></span></p>
+<p style="color:var(--mut);font-size:.88rem">שעות הימים האחרים יתווספו בהמשך.</p></div>
+</div></div></section>
+
+<section id="menu">
+<h2 class="rv-in">התפריט שלנו</h2>
+<p class="sub rv-in">המחירים בשקלים. את הפריטים אפשר לעדכן במערך RAW בקוד.</p>
+<div class="tools"><input id="q" type="search" placeholder="חיפוש בתפריט…" aria-label="חיפוש בתפריט"></div>
+<div class="cats" id="cats"></div>
+<div class="mg" id="mg"></div>
+<button class="btn pri" onclick="showAll()">צפייה בתפריט המלא</button>
+</section>
+
+<section id="gallery">
+<h2 class="rv-in">הגלריה</h2>
+<p class="sub rv-in">תמונות Placeholder עד שיועלו התמונות האמיתיות. לחיצה פותחת תצוגה מוגדלת.</p>
+<div class="gg" id="gg"></div>
+</section>
+
+<section id="events">
+<h2 class="rv-in">הרצל LIVE</h2>
+<p class="sub rv-in">הופעות מוזיקה ואירועים באווירה קהילתית.</p>
+<div class="eg" id="eg"></div>
+</section>
+
+<section id="reviews">
+<h2 class="rv-in">מה אומרים עלינו?</h2>
+<div class="rv" style="margin-top:30px">
+<div class="score rv-in"><b>4.6</b><div style="color:var(--amber);font-size:1.4rem">⭐⭐⭐⭐⭐</div><p>302 ביקורות</p></div>
+<div class="rg" id="rg"></div></div>
+<p class="note">* הביקורות למטה הן Placeholder ולא ביקורות אמיתיות.</p>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&query=%D7%A4%D7%90%D7%91+%D7%94%D7%A8%D7%A6%D7%9C+%D7%94%D7%A8%D7%A6%D7%9C+39+%D7%92%D7%9F+%D7%99%D7%91%D7%A0%D7%94" target="_blank" rel="noopener">צפייה בכל הביקורות</a>
+</section>
+
+<section id="location">
+<h2 class="rv-in">איפה אנחנו?</h2>
+<div class="lc" style="margin-top:30px">
+<div class="rv-in"><address>הרצל 39, גן יבנה</address>
+<p class="sub">נווטו עם גוגל מפות או Waze.</p>
+<div class="cta" style="justify-content:flex-start">
+<a class="btn pri" href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A8%D7%A6%D7%9C+39+%D7%92%D7%9F+%D7%99%D7%91%D7%A0%D7%94" target="_blank" rel="noopener">נווט אלינו</a>
+<a class="btn" href="https://waze.com/ul?q=%D7%94%D7%A8%D7%A6%D7%9C%2039%20%D7%92%D7%9F%20%D7%99%D7%91%D7%A0%D7%94&navigate=yes" target="_blank" rel="noopener">Waze</a></div></div>
+<a class="map rv-in" href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A8%D7%A6%D7%9C+39+%D7%92%D7%9F+%D7%99%D7%91%D7%A0%D7%94" target="_blank" rel="noopener" aria-label="פתיחה בגוגל מפות">
+<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="#e8a33d" stroke-width="2" fill="none" opacity=".6"><path d="M0 220 L400 80"/><path d="M120 0 L200 300"/><path d="M0 100 L400 190"/><path d="M290 0 L260 300"/></g><g stroke="#fff" stroke-opacity=".12" stroke-width="1"><path d="M0 40h400M0 160h400M60 0v300M340 0v300"/></g></svg>
+<div class="pin"><b>📍</b><strong>פאב הרצל</strong><div style="color:var(--mut)">הרצל 39, גן יבנה · לחצו לפתיחת המפה</div></div></a>
+</div></section>
+
+<div class="ctw" id="contact"><div class="ct rv-in">
+<h2>מגיעים הערב?</h2>
+<p style="color:#d9cfc3">הזמנת מקום מראש בטלפון: 052-478-7505</p>
+<div class="cta">
+<a class="btn pri" href="tel:+972524787505">📞 התקשר עכשיו</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A8%D7%A6%D7%9C+39+%D7%92%D7%9F+%D7%99%D7%91%D7%A0%D7%94" target="_blank" rel="noopener">🗺️ איך מגיעים?</a>
+<a class="btn" href="#menu">📋 הצגת התפריט</a>
+<a class="btn" href="https://wa.me/972524787505" target="_blank" rel="noopener">💬 וואטסאפ</a></div>
+<div class="rsv" id="rsv">
+<input id="rn" placeholder="שם מלא" autocomplete="name" aria-label="שם מלא">
+<input id="rp" type="number" min="1" max="40" inputmode="numeric" placeholder="כמה אנשים" aria-label="מספר אנשים">
+<input id="rd" type="date" aria-label="תאריך">
+<input id="rt" type="time" aria-label="שעה">
+<button class="btn pri" id="rb" type="button">הזמנת מקום בוואטסאפ</button>
+<small>הבקשה נשלחת בוואטסאפ לפאב, והאישור חוזר משם.</small></div></div></div>
+
+<footer>
+<a class="logo" href="#home">פאב הרצל | Pub Herzel</a>
+<div>הרצל 39, גן יבנה</div><a href="tel:+972524787505">052-478-7505</a>
+<div class="fl"><a data-l="facebook" href="https://www.facebook.com/search/top?q=%D7%A4%D7%90%D7%91%20%D7%94%D7%A8%D7%A6%D7%9C%20%D7%92%D7%9F%20%D7%99%D7%91%D7%A0%D7%94" target="_blank" rel="noopener">Facebook</a><a data-l="instagram" href="https://www.google.com/search?q=%D7%A4%D7%90%D7%91+%D7%94%D7%A8%D7%A6%D7%9C+%D7%92%D7%9F+%D7%99%D7%91%D7%A0%D7%94+instagram" target="_blank" rel="noopener">Instagram</a><a data-l="reviews" href="https://www.google.com/maps/search/?api=1&query=%D7%A4%D7%90%D7%91+%D7%94%D7%A8%D7%A6%D7%9C+%D7%94%D7%A8%D7%A6%D7%9C+39+%D7%92%D7%9F+%D7%99%D7%91%D7%A0%D7%94" target="_blank" rel="noopener">Google Reviews</a><a href="https://waze.com/ul?q=%D7%94%D7%A8%D7%A6%D7%9C%2039%20%D7%92%D7%9F%20%D7%99%D7%91%D7%A0%D7%94&navigate=yes" target="_blank" rel="noopener">Waze</a></div>
+</footer>
+
+<a class="btn pri fab" href="tel:+972524787505">📞 התקשר עכשיו</a>
+<div class="lb" id="lb" role="dialog" aria-modal="true"><button id="lx" aria-label="סגירה">×</button><button class="nb" id="lp" aria-label="הקודם">›</button><button class="nb" id="ln" aria-label="הבא">‹</button><div><div class="ph" id="lbi"></div><p id="lbt"></p></div></div>
+<div class="toast" id="tt"></div>
+
+<script>
+// ===== נתונים – קל להחליף =====
+const LINKS={facebook:'',instagram:'',reviews:''}; // הדביקו כאן קישורים אמיתיים
+const CATS=[['beer','🍺','בירות'],['cocktail','🍸','קוקטיילים'],['spirits','🥃','אלכוהול'],['food','🍔','אוכל'],['pickles','🥒','Pickles'],['drinks','🍹','משקאות']];
+const E={beer:'🍺',cocktail:'🍸',spirits:'🥃',food:'🍔',pickles:'🥒',drinks:'🍹'};
+const RAW=[
+['beer','חצי גולסטאר','28/32'],['beer','שליש גולסטאר','24/28'],['beer','בירה הרצל ישראלית','32'],['beer','שליש בירה ישראלית','32'],['beer','בירה שקמה','32'],['beer','בירה גלנץ','32'],['beer','בירה קורונה','32'],['beer','בירה אסטריה דאם','32'],['beer','בירה בלאנק 1664','32'],['beer','בירה קרלסברג ללא אלכוהול','26'],['beer','בירה נקטר','32'],['beer','בירה קסטיל רוזה','36'],['beer','סיידר סטרונגבואו','32'],
+['cocktail','אפרול שפריץ','36'],
+['spirits','ג׳ק דניאלס','32'],['spirits','ג׳וני ווקר בלאק','32'],['spirits','שיבאס רגאל','32'],['spirits','ג׳יימסון','32'],['spirits','בושמילס','32'],['spirits','טולמור דיו','32'],['spirits','גלנפידיך 12','38'],['spirits','בושמילס 10','38'],['spirits','סינגלטון 12','38'],['spirits','לפרויג 10','40'],['spirits','טאליסקר 10','40'],['spirits','קוואליר לאגר 12','42'],['spirits','בלווני 12','46'],
+['spirits','פינלנדיה','31'],['spirits','סטוליצ׳ניה','31'],['spirits','רוסקי סטנדרט','31'],['spirits','אבסולוט','31'],['spirits','ואן גוך','36'],['spirits','גריי גוס','36'],['spirits','קטל וואן','36'],
+['spirits','ג׳ין','40'],['spirits','ג׳ין מיוחד','44'],['spirits','טקילה קוארבו','40'],['spirits','טקילה רפוסאדו','45'],['spirits','טקילה דון חוליו','55'],['spirits','רום באקארדי','40'],['spirits','רום קפטן מורגן','42'],['spirits','ייגרמייסטר','40'],['spirits','פידג׳','38'],['spirits','בחילרובקה','38'],['spirits','ערק קוורטר','42'],['spirits','ערק מיוחד','46'],['spirits','ליקר דרמבוי','42'],['spirits','ליקר קלואה','42'],['spirits','ליקר אמרטו','42'],['spirits','אוזו','40'],['spirits','מרטיני','36'],['spirits','קמפרי','40'],
+['spirits','יין אדום','כוס ₪39 · בקבוק ₪137'],['spirits','יין לבן','כוס ₪39 · בקבוק ₪137'],['spirits','יין גוורצטרמינר','כוס ₪39 · בקבוק ₪137'],['spirits','יין קברנה סוביניון','כוס ₪39 · בקבוק ₪137'],['spirits','קאווה / למברוסקו','כוס ₪29 · בקבוק ₪115'],
+['spirits','צ׳ייסר גולסטאר','11'],['spirits','צ׳ייסר ערק / פידג׳ / ערק מיוחד','15'],['spirits','צ׳ייסר Anis','15'],['spirits','צ׳ייסר רוסקי / פינלנדיה / אבסולוט','15'],['spirits','צ׳ייסר ג׳יימסון / בושמילס / טולמור','16'],['spirits','צ׳ייסר ג׳ק דניאלס / ג׳וני בלאק / שיבאס','18'],['spirits','צ׳ייסר ואן גוך / גריי גוס','21'],['spirits','צ׳ייסר בחילרובקה / ייגר / אוזו / קמפרי','21'],['spirits','צ׳ייסר ג׳ין / טקילה / רום','22'],['spirits','צ׳ייסר סינגל מאלט / דון חוליו','24'],
+['drinks','קוקה קולה / זירו','13'],['drinks','ספרייט / זירו','13'],['drinks','פאנטה','13'],['drinks','מיץ תפוזים','12'],['drinks','מיץ אשכוליות','12'],['drinks','סודה','9'],['drinks','מים מינרליים','11'],['drinks','טוניק','12'],['drinks','בלו / XL','12'],['drinks','בירה שחורה','12'],['drinks','אספרסו','9'],['drinks','אמריקנו','11']
+];
+const fmt=p=>/^[\d\/]+$/.test(p)?p.split('/').map(x=>'₪'+x).join(' / '):p;
+const MENU=RAW.map(([cat,name,price])=>({cat,emoji:E[cat],name,desc:'',price:fmt(price),img:''}));
+const GALLERY=[['🏠','הפאב','w'],['🍸','הבר','t'],['🍔','אוכל',''],['🍹','קוקטיילים',''],['🎉','אנשים מבלים','w'],['🎸','הופעות',''],['🌙','אווירת לילה','']];
+const EVENTS=[['🎸','שם אירוע לדוגמה','תאריך יעודכן','שעה תעודכן','פרטי האירוע יתווספו כאן.'],['🎤','הופעה לדוגמה','תאריך יעודכן','שעה תעודכן','פרטי ההופעה יתווספו כאן.'],['🎶','ערב מוזיקה לדוגמה','תאריך יעודכן','שעה תעודכן','פרטי הערב יתווספו כאן.']];
+const REVIEWS=[['שם הלקוח','ביקורת לדוגמה. להחליף בביקורת אמיתית מגוגל.'],['שם הלקוח','ביקורת לדוגמה. להחליף בביקורת אמיתית מגוגל.'],['שם הלקוח','ביקורת לדוגמה. להחליף בביקורת אמיתית מגוגל.']];
+const HOURS={1:[[20,30],[24,0]]}; // יום שני בלבד (0=ראשון). ימים נוספים – להוסיף כאן.
+// ===== עזרים =====
+const $=s=>document.querySelector(s),grads=['#3a2257,#5c1622','#5c1622,#a8650f','#1c1430,#3a2257','#a8650f,#2a1a0c','#241d18,#5c1622'];
+const bgOf=i=>`linear-gradient(135deg,${grads[i%grads.length]})`;
+function toast(m){const t=$('#tt');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),2400)}
+function ph(n){toast('קישור ל-'+n+' יתווסף כאן');return false}
+// ===== Navbar =====
+const nav=$('#nav'),bg=$('#bg'),lk=$('#lk');
+addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>40),{passive:true});
+const setMenu=o=>{bg.classList.toggle('on',o);lk.classList.toggle('on',o);document.body.style.overflow=o?'hidden':''};
+bg.onclick=()=>setMenu(!lk.classList.contains('on'));
+lk.querySelectorAll('a').forEach(a=>a.onclick=()=>setMenu(false));
+addEventListener('resize',()=>innerWidth>820&&setMenu(false));
+// ===== Menu =====
+let cat='all';
+const cw=$('#cats');
+cw.innerHTML=[['all','✨','הכול'],...CATS].map(([k,e,n])=>`<button data-k="${k}" class="${k=='all'?'on':''}">${e} ${n}</button>`).join('');
+cw.onclick=e=>{const b=e.target.closest('button');if(!b)return;cat=b.dataset.k;cw.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));drawMenu()};
+$('#q').oninput=drawMenu;
+function drawMenu(){
+ const q=$('#q').value.trim(),list=MENU.filter(m=>(cat=='all'||m.cat==cat)&&(!q||(m.name+m.desc).includes(q)));
+ $('#mg').innerHTML=list.length?list.map((m,i)=>`<article class="dish"><div class="ph" style="background:${m.img?`url(${m.img}) center/cover`:bgOf(i)}"><span>${m.emoji}</span></div><div class="dc"><h3>${m.name}<i>${m.price}</i></h3>${m.desc?`<p>${m.desc}</p>`:''}<small>${CATS.find(c=>c[0]==m.cat)[2]}</small></div></article>`).join(''):`<p class="empty">${q?'לא נמצאו פריטים. נסו חיפוש אחר.':'התפריט בקטגוריה הזו יתעדכן בקרוב.'}</p>`;
+}
+drawMenu();
+// ===== Gallery =====
+$('#gg').innerHTML=GALLERY.map(([e,t,c],i)=>`<button class="gi ${c}" data-i="${i}"><div class="ph" style="background:${bgOf(i+1)}"><span>${e}</span></div><small>${t}</small></button>`).join('');
+const lb=$('#lb');
+let gi=0;
+function showG(i){gi=(i+GALLERY.length)%GALLERY.length;const g=GALLERY[gi];$('#lbi').style.background=bgOf(gi+1);$('#lbi').innerHTML='<span>'+g[0]+'</span>';$('#lbt').textContent=g[1];lb.classList.add('on');document.body.style.overflow='hidden'}
+function closeG(){lb.classList.remove('on');document.body.style.overflow=''}
+$('#gg').onclick=e=>{const b=e.target.closest('.gi');if(b)showG(+b.dataset.i)};
+lb.onclick=e=>{if(e.target===lb||e.target.id=='lx')closeG()};
+$('#lp').onclick=()=>showG(gi-1);$('#ln').onclick=()=>showG(gi+1);
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key=='Escape')closeG();if(e.key=='ArrowRight')showG(gi-1);if(e.key=='ArrowLeft')showG(gi+1)});
+let tx=0;lb.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)showG(gi+(d>0?-1:1))});
+// ===== Events & reviews =====
+$('#eg').innerHTML=EVENTS.map(([e,n,d,t,p],i)=>`<article class="ev rv-in"><div class="ph" style="background:${bgOf(i+2)}"><span>${e}</span></div><div class="b"><h3>${n}</h3><div class="d">${d} · ${t}</div><p>${p}</p><a class="btn" href="tel:+972524787505">להזמנה בטלפון</a></div></article>`).join('');
+$('#rg').innerHTML=REVIEWS.map(([n,t])=>`<div class="rc rv-in"><div class="s">★★★★★</div><p>${t}</p><small>${n}</small></div>`).join('');
+// ===== Open status (Mon only, Israel time) =====
+(function(){
+ const p=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Jerusalem',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),
+ g=t=>p.find(x=>x.type==t).value,day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),mins=(+g('hour')%24)*60+ +g('minute'),h=HOURS[day];
+ if(!h)return; // ימים ללא שעות מוגדרות – אין סטטוס
+ const open=mins>=h[0][0]*60+h[0][1]&&mins<h[1][0]*60+h[1][1],s=$('#st');
+ s.hidden=false;s.className='st '+(open?'o':'c');s.textContent=open?'פתוח עכשיו':'סגור עכשיו';
+})();
+// ===== Show full menu =====
+function showAll(){cat='all';$('#q').value='';cw.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset.k=='all'));drawMenu();$('#menu').scrollIntoView({behavior:'smooth'});toast('מציג את כל התפריט')}
+// ===== Footer links override =====
+document.querySelectorAll('[data-l]').forEach(a=>{if(LINKS[a.dataset.l])a.href=LINKS[a.dataset.l]});
+// ===== Reservation via WhatsApp =====
+const rd=$('#rd');rd.min=new Date().toLocaleDateString('en-CA');
+$('#rb').onclick=()=>{
+ const n=$('#rn').value.trim(),pp=$('#rp').value,d=rd.value,t=$('#rt').value;
+ if(!n||!pp||!d||!t){toast('נא למלא שם, כמות אנשים, תאריך ושעה');return}
+ const dd=d.split('-').reverse().join('/');
+ const msg=`שלום, אשמח להזמין מקום בפאב הרצל.\nשם: ${n}\nמספר אנשים: ${pp}\nתאריך: ${dd}\nשעה: ${t}`;
+ const u='https://wa.me/972524787505?text='+encodeURIComponent(msg);
+ const w=window.open(u,'_blank','noopener');if(!w){try{(window.top||window).location.href=u}catch(_){location.href=u}}
+ toast('פותח וואטסאפ עם פרטי ההזמנה');
+};
+// ===== Active nav link =====
+const secs=[...lk.querySelectorAll('a')].map(a=>[a,document.querySelector(a.getAttribute('href'))]).filter(x=>x[1]);
+addEventListener('scroll',()=>{let cur=null;secs.forEach(([a,el])=>{if(el.getBoundingClientRect().top<=140)cur=a});secs.forEach(([a])=>a.classList.toggle('act',a===cur))},{passive:true});
+// ===== Call buttons: open dialer =====
+document.addEventListener('click',e=>{
+ const a=e.target.closest('a[href^="tel:"]');if(!a)return;
+ e.preventDefault();
+ const n=a.getAttribute('href');
+ try{(window.top||window).location.href=n}catch(_){try{window.location.href=n}catch(__){}}
+ try{navigator.clipboard.writeText('052-478-7505')}catch(_){}
+ toast('מחייג ל-052-478-7505');
+});
+// ===== Scroll reveal =====
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv-in').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
